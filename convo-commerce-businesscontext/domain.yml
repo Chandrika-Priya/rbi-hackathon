@@ -1,0 +1,79 @@
+intents:
+- ask_account_balance
+- transfer_money
+- transaction_history
+- register_user
+- remove_user
+- user_information
+- get_amount
+
+entities:
+- amount
+- to_user
+
+slots:
+  amount:
+    type: any
+    mappings:
+      - entity: amount
+        type: from_entity
+  to_user:
+    type: text
+    mappings:
+      - entity: to_user
+        type: from_entity
+
+responses:
+  utter_account_balance:
+    - text: Your account balance is {account_currency} {account_balance}.
+    - text: You currently have {account_currency} {account_balance} in your account.
+    - text: Your available balance is {account_currency} {account_balance}.
+    - text: The current balance in your account is {account_currency} {account_balance}.
+    - text: I can see that your account balance is {account_currency} {account_balance}.
+    - text: Your account balance is {account_currency} {account_balance}. Would you like to do anything else?
+    - text: Sure, your account balance is {account_currency} {account_balance}.
+    - text: No problem, your current account balance is {account_currency} {account_balance}.
+  utter_transaction_history:
+    - text: Data#####{data}
+  utter_user_registration:
+    - text: You have registered successfully
+    - text: User added successfully
+    - text: online banking account created successfully
+    - text: account is registered successfully
+  utter_remove_user:
+    - text: Your account is deleted
+    - text: User account is removed
+    - text: User account is de-registered
+  utter_transfer_money:
+    - text: Transferred money successfully to the selected account
+    - text: Funds transferred successfully
+    - text: Money sent to selected account
+    - text: Your transaction is siccessful
+  utter_user_details:
+    - text: Your profile details as follows full name is {full_name}, nick_name is {nick_name}, mobile number is {mob_number} and upi id is {upi_id}.
+  utter_ask_amount:
+    - text: please enter how much amount to transfer?
+  utter_transaction_details:
+    - text: Transaction of amount {amount} rupees to {to_user} is successful.
+
+actions:
+  - action_account_balance
+  - action_register_user
+  - action_remove_user
+  - action_transaction_history
+  - action_transfer_money
+  - action_user_information
+  - utter_ask_amount
+  - utter_transaction_details
+
+forms:
+  account_form:
+    ignored_intents: [ ]
+    required_slots:
+      - account_balance
+      - account-currency
+  transfer_money_form:
+    ignored_intents: [ ]
+    required_slots:
+      - amount
+      - to_user

@@ -1,0 +1,26 @@
+version: "2.0"
+rules:
+  # Account balance inquiry
+  - rule: Account balance inquiry
+    steps:
+      - intent: ask_account_balance
+      - action: action_account_balance
+  # Last 10 transactions
+  - rule: Transaction history
+    steps:
+      - intent: transaction_history
+      - action: action_transaction_history
+  # Add & remove user registration
+  - rule: User registration to online banking
+    steps:
+      - intent: register_user
+      - action: action_register_user
+  - rule: remove user registration for an online banking
+    steps:
+      - intent: remove_user
+      - action: action_remove_user
+  # User account information
+  - rule: User information
+    steps:
+      - intent: user_information
+      - action: action_user_information

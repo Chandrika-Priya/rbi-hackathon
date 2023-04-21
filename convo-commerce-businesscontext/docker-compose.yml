@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  duckling:
+    image: rasa/duckling
+    ports:
+      - "8000:8000"
+
+  rasa:
+    image: rasa-module
+    ports:
+      - "8081:8081"
+      - "5005:5005"
+      - "5055:5055"

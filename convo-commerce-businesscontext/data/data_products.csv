@@ -1,0 +1,34 @@
+SellerID,ProductID,ProdCategory,ProdName,Tags,ProdImg,ProdPrice,InventorySize
+Sel_01,Prod_001,Grocery,Ashirwad Atta - 5Kg,"Atta, Ashirwaad atta, Ashirwaad, Wheat Flour",,270,10
+Sel_01,Prod_002,Grocery,Essential Sona Masuri Rice - 1 Kg,,,100,10
+Sel_01,Prod_003,Grocery,India Gate Basmati Rice - 1Kg,,,115,10
+Sel_01,Prod_004,Grocery,Aashirvaad Atta - Multigrain - 3 Kg,,,150,10
+Sel_01,Prod_005,Grocery,Atta - Loose (per Kg),,,45,100
+Sel_01,Prod_006,Grocery,Rice - Loose (per Kg),,,60,100
+Sel_01,Prod_007,Grocery,Daawat Basmati Rice - 2 Kg,,,240,10
+Sel_01,Prod_008,Grocery,Essentials Besan - 500gm,,,85,10
+Sel_01,Prod_009,Grocery,Essentials Poha - 1 Kg,,,25,10
+Sel_01,Prod_010,Grocery,Poha - Loose,,,20,50
+Sel_01,Prod_011,General,Britannia GoodDay Biscuit - 250 gm,,,30,50
+Sel_01,Prod_012,General,Britannia Rusk - 250gm,,,40,50
+Sel_01,Prod_013,General,Britannia Digestive Biscuits (100gm),,,20,50
+Sel_01,Prod_014,General,Britannia Jim and Jam (150 gm),,,35,50
+Sel_01,Prod_015,General,Lotte ChocoPie (12 pack),,,150,50
+Sel_01,Prod_016,Personal Care,Himalaya baby Cream - 100ml,,,150,50
+Sel_01,Prod_017,Personal Care,Bionova Hand Sanitizer - 500ml,,,300,100
+Sel_01,Prod_018,Personal Care,Cinthol Lemon Soap 125g,,,25,100
+Sel_01,Prod_019,Personal Care,Dettol HandWash - 200 ml,,,100,100
+Sel_01,Prod_020,Personal Care,Dettol Handwash Refill pack - 750ml,,,110,100
+Sel_01,Prod_021,Personal Care,Coconut Hair Oil - 100ml,,,80,50
+Sel_01,Prod_022,Personal Care,Bajaj Almond Hair Oil - 200 ml,,,240,50
+Sel_01,Prod_023,Fruits/Vegetables,American Apple - per Kg,,,110,15
+Sel_01,Prod_024,Fruits/Vegetables,Kashmiri Apple - per Kg,,,130,15
+Sel_01,Prod_025,Fruits/Vegetables,Orange - per Kg,,,75,15
+Sel_01,Prod_026,Fruits/Vegetables,Litchi - per Kg,,,150,5
+Sel_01,Prod_027,Fruits/Vegetables,Bottle Gourd - per Kg,,,35,10
+Sel_01,Prod_028,Fruits/Vegetables,Brinjal - per Kg,,,45,10
+Sel_01,Prod_029,Fruits/Vegetables,Cabbage - per Kg,,,55,10
+Sel_01,Prod_030,Fruits/Vegetables,Cauliflower- per Kg,,,60,10
+Sel_01,Prod_031,Fruits/Vegetables,Chilli - per Kg,,,120,5
+Sel_01,Prod_032,Fruits/Vegetables,Coriander - Per bundle,,,25,50
+Sel_01,Prod_033,Fruits/Vegetables,Garlic - per 250 gm,,,90,5

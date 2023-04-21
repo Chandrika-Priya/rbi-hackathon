@@ -1,0 +1,61 @@
+version: "2.0"
+nlu:
+  - regex: amount
+    examples: |
+      - ^\d+$
+  - intent: ask_account_balance
+    examples: |
+      - What's my account balance?
+      - Can you tell me my current balance?
+      - How much money do I have in my account?
+      - What's my available balance?
+  - intent: transfer_money
+    examples: |
+      - Transfer amount to (to_user)
+      - send money to (to_user)
+      - Transfer amount to [Kamesh](to_user)
+      - Send money to [Venu](to_user)
+      - send amount to [hruthika](to_user)
+      - Transfer money to [irfan](to_user)
+      - I want to send amount to [Murli](to_user)
+      - Can you transfer money to [Chandrika](to_user)?
+      - Please transfer amount to [Rajesh](to_user)
+      - I want to send money to [Kawal](to_user)
+      - I would like to transfer money to [Robert](to_user) please
+      - Can you transfer amount to [john](to_user)?
+
+  - intent: transaction_history
+    examples: |
+      - Can you display my last 10 transaction history?
+      - can I see my transaction history for the past few days?
+      - I need to check my recent transaction history.
+      - What is the process to display my last 10 transactions?
+      - Please help me display my transaction history.
+  - intent: register_user
+    examples: |
+      - I want to register for net banking
+      - create a new net banking account
+      - I need to sign up for net banking
+      - Please help me register for online banking
+      - Add a new account for online banking
+  - intent: remove_user
+    examples: |
+      - I want to de register for net banking
+      - remove net banking account
+      - delete my account
+      - remove my net banking access
+      - cancel my net banking account
+  - intent: user_information
+    examples: |
+      - Can you provide me my account details?
+      - How can I see my personal information in net banking?
+      - I need to check my account information.
+      - fetch my user details?
+      - Please help me see my account information.
+  - intent: get_amount
+    examples: |
+      - please enter how much amount to transfer?
+      - transfer [100](amount) rupees.
+      - [100](amount) rupees
+      - send [25](amount) rupees.
+      - [10](amount) rupees

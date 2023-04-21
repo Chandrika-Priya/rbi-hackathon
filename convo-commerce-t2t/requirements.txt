@@ -1,0 +1,13 @@
+Flask
+wheel
+sacremoses 
+pandas 
+mock 
+sacrebleu 
+tensorboardX 
+pyarrow 
+indic-nlp-library
+mosestokenizer 
+subword-nmt
+#Install fairseq from source 
+fairseq==0.12.0
