@@ -30,33 +30,15 @@ public class TranslationService {
     public String translateFromIndicToEnglish(String text, String source) {
         Cache cache = cacheHelper.getAI4BharatCacheFile();
         String response;
-        if(cache.get(text)==null) {
-            response = translationWebClient.translate(text, source, "en").getTranslatedText();
-            cache.put(new Element(text, response));
-        }
-        else
-        {
-            Object object = cache.get(text).getObjectValue();
-            response = (String) object;
-        }
+        response = translationWebClient.translate(text, source, "en").getTranslatedText();
         return response;
     }
-
-//    public List<String> translateFromEnglishToIndic(List<String> text, String target) {
-//        return translationWebClient.translateEnglishToIndic(text, target).getTranslatedText();
-//    }
 
     public String translateFromEnglishToIndic(String text, String target) {
         Cache cache = cacheHelper.getAI4BharatCacheFile();
         String response;
-        if (cache.get(text) == null) {
-            List<String> translatedText = translationWebClient.translateEnglishToIndic(new ArrayList<>(Collections.singleton(text)), target).getTranslatedText();
-            cache.put(new Element(text, translatedText.get(0)));
-            response = translatedText.get(0);
-        } else {
-            Object object = cache.get(text).getObjectValue();
-            response = (String) object;
-        }
+        List<String> translatedText = translationWebClient.translateEnglishToIndic(new ArrayList<>(Collections.singleton(text)), target).getTranslatedText();
+        response = translatedText.get(0);
         return response;
     }
 }
