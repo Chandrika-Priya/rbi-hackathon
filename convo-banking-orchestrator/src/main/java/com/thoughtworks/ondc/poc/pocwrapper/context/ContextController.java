@@ -30,7 +30,7 @@ public class ContextController {
     IndicResponse getContextFromAudio(
             @RequestParam(name = "senderId") String senderId,
             @RequestParam(name = "sourceLang") String sourceLang,
-            @RequestBody(name = "file") MultipartFile file,
+            @RequestBody MultipartFile file,
             @RequestParam String metaData) throws IOException, InterruptedException {
 
         byte[] decodedBytes = Base64.getDecoder().decode(metaData);
@@ -48,7 +48,7 @@ public class ContextController {
         log.info("Fetching context... ");
         ContextResponse response = contextService.getContext(translatedText,requestData);
         if(sourceLang.equals("english")){
-            return new IndicResponse(indicText,message);
+            return new IndicResponse(indicText,response.getNextStep().getMessage());
         }
         String message = response.getNextStep().getMessage();
         if(response.getData().size() == 0){

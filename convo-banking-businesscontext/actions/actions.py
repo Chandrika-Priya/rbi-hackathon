@@ -120,7 +120,7 @@ class ActionUserInformation(Action):
                   mob_number=user_info["mob_number"],
                   upi_id=user_info["upi_id"]
 
-                  dispatcher.utter_message(template="utter_user_details",nick_name=nick_name,full_name=full_name,mob_number=mob_number,upi_id=upi_id)
+                  dispatcher.utter_message(template="utter_user_details",nick_name=nick_name[0],full_name=full_name[0],mob_number=mob_number[0],upi_id=upi_id)
          else:
                   dispatcher.utter_message("Sorry, I couldn't find user details.")
 
