@@ -12,6 +12,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ContextResponse {
+    private String context;
     private NextStep nextStep;
     private List<Map<String, String>> data;
 

@@ -8,5 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 public class IndicResponse {
     private String input;
+    private String context;
     private String result;
 }

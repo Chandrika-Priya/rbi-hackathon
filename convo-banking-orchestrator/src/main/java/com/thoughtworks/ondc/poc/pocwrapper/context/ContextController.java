@@ -48,11 +48,11 @@ public class ContextController {
         log.info("Fetching context... ");
         ContextResponse response = contextService.getContext(translatedText,requestData);
         if(sourceLang.equals("english")){
-            return new IndicResponse(indicText,response.getNextStep().getMessage());
+            return new IndicResponse(indicText,response.getContext(),response.getNextStep().getMessage());
         }
         String message = response.getNextStep().getMessage();
         if(response.getData().size() == 0){
-            return  new IndicResponse(indicText,translationService.translateFromEnglishToIndic(message, sourceLang));
+            return  new IndicResponse(indicText,response.getContext(),translationService.translateFromEnglishToIndic(message, sourceLang));
         }
         String res = "";
         log.info("Translating to indic... ");
@@ -63,7 +63,7 @@ public class ContextController {
             }
             res += translationService.translateFromEnglishToIndic(sb.toString(), sourceLang);
         }
-        IndicResponse indicResponse = new IndicResponse(indicText,res);
+        IndicResponse indicResponse = new IndicResponse(indicText,response.getContext(),res);
         log.info("Done");
 
         return indicResponse;

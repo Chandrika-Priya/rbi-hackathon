@@ -14,7 +14,7 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MLContextResponse {
-
+    private String context;
     private NextStep nextStep;
     private List<Map<String, String>> data;
 
