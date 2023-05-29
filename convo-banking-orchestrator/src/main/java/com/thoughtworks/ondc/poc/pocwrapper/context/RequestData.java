@@ -23,4 +23,8 @@ public class RequestData {
     private String pin_number;
     @Nullable
     private String user_name;
+    @Nullable
+    private String action;
+    @Nullable
+    private String date_filter;
 }

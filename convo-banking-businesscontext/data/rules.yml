@@ -8,12 +8,16 @@ rules:
   # Last 10 transactions
   - rule: Transaction history
     steps:
-      - intent: transaction_history
+      - intent: transaction_period
+      - action: action_transaction_history
+  - rule: Transaction history
+    steps:
+      - intent: transaction_with_user
       - action: action_transaction_history
   # Add & remove user registration
   - rule: User registration to online banking
     steps:
-      - intent: register_user
+      - intent: submit_user
       - action: action_register_user
   - rule: remove user registration for an online banking
     steps:
@@ -24,3 +28,7 @@ rules:
     steps:
       - intent: user_information
       - action: action_user_information
+#  - rule: login
+#    steps:
+#      - intent: login
+#      - action: action_login_user

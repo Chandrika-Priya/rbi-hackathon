@@ -31,6 +31,13 @@ nlu:
       - I need to check my recent transaction history.
       - What is the process to display my last 10 transactions?
       - Please help me display my transaction history.
+  - intent: transaction_with_user
+    examples: |
+      - show transaction history with user [irfan](to_user)
+      - show transaction history with user [sandeep](to_user)
+      - show transaction history with user [irfan](to_user)
+      - show my transaction with [irfan](to_user)
+
   - intent: register_user
     examples: |
       - I want to register for net banking
@@ -38,6 +45,11 @@ nlu:
       - I need to sign up for net banking
       - Please help me register for online banking
       - Add a new account for online banking
+  - intent: submit_user
+    examples: |
+      - submit
+      - submit
+      - submit
   - intent: remove_user
     examples: |
       - I want to de register for net banking
@@ -59,3 +71,13 @@ nlu:
       - [100](amount) rupees
       - send [25](amount) rupees.
       - [10](amount) rupees
+  - intent: transaction_period
+    examples: |
+      - duration
+      - duration
+      - duration
+#  - intent: login
+#    examples: |
+#      - login
+#      - please login
+#      - login

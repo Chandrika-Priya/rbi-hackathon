@@ -8,6 +8,7 @@ stories:
   - story: user asks for registration to online banking
     steps:
       - intent: register_user
+      - intent: submit_user
       - action: action_register_user
       - active_loop: null
   - story: user asks for removing online banking user account
@@ -18,6 +19,12 @@ stories:
   - story: user asks for last 10 transactions history
     steps:
       - intent: transaction_history
+      - intent: transaction_period
+      - action: action_transaction_history
+      - active_loop: null
+  - story: user asks for transactions with user history
+    steps:
+      - intent: transaction_with_user
       - action: action_transaction_history
       - active_loop: null
   - story: user asks for account information
@@ -32,3 +39,7 @@ stories:
       - intent: get_amount
       - action: action_transfer_money
       - active_loop: null
+#  - story: login
+#    steps:
+#      - intent: login
+#      - action: action_login_user

@@ -6,6 +6,9 @@ intents:
 - remove_user
 - user_information
 - get_amount
+- submit_user
+- transaction_period
+- transaction_with_user
 
 entities:
 - amount
@@ -65,6 +68,7 @@ actions:
   - action_user_information
   - utter_ask_amount
   - utter_transaction_details
+  - action_login_user
 
 forms:
   account_form:

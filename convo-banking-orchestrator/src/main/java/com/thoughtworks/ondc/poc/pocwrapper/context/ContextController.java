@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -20,6 +21,9 @@ public class ContextController {
     private final TranslationService translationService;
     private final SpeechService speechService;
 
+    private final String REGISTER_USER_COMMAND = "submit";
+    private final String TRANSACTION_COMMAND = "duration";
+
     public ContextController(ContextService contextService, TranslationService translationService, SpeechService speechService) {
         this.contextService = contextService;
         this.translationService = translationService;
@@ -30,20 +34,30 @@ public class ContextController {
     IndicResponse getContextFromAudio(
             @RequestParam(name = "senderId") String senderId,
             @RequestParam(name = "sourceLang") String sourceLang,
-            @RequestBody MultipartFile file,
+            @RequestBody(required = false) MultipartFile file,
             @RequestParam String metaData) throws IOException, InterruptedException {
 
         byte[] decodedBytes = Base64.getDecoder().decode(metaData);
         String decodedString = new String(decodedBytes);
         RequestData requestData = new ObjectMapper().readValue(decodedString, RequestData.class);
+        String translatedText = requestData.getAction();
 
-        log.info("Audio size is : " + file.getSize());
-        String indicText = speechService.getTextFromFile(file, sourceLang);
-        log.info("Audio to Text : " + indicText);
+        String indicText ="";
+        System.out.println(requestData.getAction().trim());
+        System.out.println(!requestData.getAction().equals(TRANSACTION_COMMAND));
+        if(!requestData.getAction().equals(REGISTER_USER_COMMAND) && !requestData.getAction().equals(TRANSACTION_COMMAND)){
+            log.info("Audio size is : " + file.getSize());
+            indicText = speechService.getTextFromFile(file, sourceLang);
+            System.out.println(indicText);
+            log.info("Audio to Text : " + indicText);
 
-        log.info("Translating text... ");
-        String translatedText = translationService.translateFromIndicToEnglish(indicText, sourceLang);
-        log.info("Translated text : " + translatedText);
+            log.info("Translating text... ");
+            if (indicText==null) {
+                return new IndicResponse("","error",translationService.translateFromEnglishToIndic("Sorry,I couldn't understand",sourceLang));
+            }
+            translatedText = translationService.translateFromIndicToEnglish(indicText, sourceLang);
+            log.info("Translated text : " + translatedText);
+        }
 
         log.info("Fetching context... ");
         ContextResponse response = contextService.getContext(translatedText,requestData);
